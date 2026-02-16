@@ -1,10 +1,9 @@
 import azure.functions as func
+import json
 
-app = func.FunctionApp()
-
-@app.route(route="sajbio", auth_level=func.AuthLevel.ANONYMOUS)
-def sajbio(req: func.HttpRequest) -> func.HttpResponse:
+def main(req: func.HttpRequest) -> func.HttpResponse:
     return func.HttpResponse(
-        '{"name":"Saj Samuel","title":"Azure Builder"}',
-        mimetype="application/json"
+        json.dumps({"name": "Saj Samuel", "title": "Azure Builder"}),
+        mimetype="application/json",
+        status_code=200
     )
