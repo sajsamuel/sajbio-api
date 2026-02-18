@@ -99,7 +99,7 @@ def _render_html(bio: dict, meta: dict) -> func.HttpResponse:
 
     # Links (edit these)
     github_url = html.escape(os.getenv("APP_GITHUB_URL", "https://github.com/sajsamuel"))
-    linkedin_url = html.escape(os.getenv("APP_LINKEDIN_URL", "www.linkedin.com/in/sajsamuel"))
+    linkedin_url = html.escape(os.getenv("APP_LINKEDIN_URL", "https://www.linkedin.com/in/sajsamuel"))
     email_addr = html.escape(os.getenv("APP_EMAIL", "sajksamuel@outlook.com"))
 
     skills = "".join(f"<li>{html.escape(s)}</li>" for s in bio["core_expertise"])
